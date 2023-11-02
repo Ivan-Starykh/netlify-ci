@@ -7,20 +7,29 @@
     <title>Git</title>
     <!-- <link rel="stylesheet" href="/src/style.css" /> -->
   </head>
-  <body class="page">
+  <body class="page" style="display: flex;
+  flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+	max-inline-size: 375px;">
     <header class="header"></header>
     <main>
-      <div class="main__title">
+      <div class="main__title" style="font-size:20px; text-aline:center;">
 				<p class="first__discription">
 					Уважаемый участник! 
 				</p>
-				<p>На выполнение этого задания отводится 15 минут</p>
+				<br>На выполнение этого задания отводится <br> 15 минут </br></p>
 				<p class="main__text">
           по истечении которого тест прекращается и Ваш ответ не будет сохранен
         </p>
 
         <h1 class="title">
-				<div id="countdown-timer">
+				<div id="countdown-timer" style="position: relative;">
 					<h2>15</h2>
 					<p>минут</p>
 				</div>
@@ -28,9 +37,9 @@
         
 <div class="white-line" style="position: absolute;
 width: 100%;
-height: 12rem;
+height: 17rem;
 background-color: #fff;
-top: 12rem;
+top: 20%;
 left: 0;"></div>
 
 
@@ -47,7 +56,7 @@ function updateCountdown() {
 		let minutes = Math.floor(difference / 1000 / 60);
 		let seconds = Math.floor((difference / 1000) % 60);
 
-		document.getElementById("countdown-timer").innerHTML = minutes + " минут " + seconds + " секунд ";
+		document.getElementById("countdown-timer").innerHTML = minutes + " мин " + seconds + " сек ";
 		setTimeout(updateCountdown, 1000);
 	} else{
 alert("Время истекло!");
@@ -67,7 +76,7 @@ updateCountdown();
         width="650"
       ></iframe> -->
     
-			<iframe id="yandex__form" src="https://docs.google.com/forms/d/e/1FAIpQLSfJ0nvKRuCz9_mTsgfvEPxB4tuxB5Zejed71IsBZCM9wZK_vg/viewform?embedded=true" width="640" height="12635" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+			<iframe style="display: flex; flex-direction: column; width: 100%;" id="yandex__form" src="https://docs.google.com/forms/d/e/1FAIpQLSfJ0nvKRuCz9_mTsgfvEPxB4tuxB5Zejed71IsBZCM9wZK_vg/viewform?embedded=true" width="800" height="12635" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
 			</main>
   </body>
 </html>
