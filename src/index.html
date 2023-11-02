@@ -1,72 +1,83 @@
 <!-- index.html -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <title>Git</title>
     <!-- <link rel="stylesheet" href="/src/style.css" /> -->
   </head>
-  <body class="page" style="display: flex;
-  flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-  min-height: 100vh;
-  font-family: sans-serif;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-	max-inline-size: 375px;">
+  <body
+    class="page"
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100%;
+      font-family: sans-serif;
+
+      box-sizing: border-box;
+      min-inline-size: 375px;
+    "
+    style="position: relative"
+  >
     <header class="header"></header>
-    <main>
-      <div class="main__title" style="font-size:20px; text-aline:center;">
-				<p class="first__discription">
-					Уважаемый участник! 
-				</p>
-				<br>На выполнение этого задания отводится <br> 15 минут </br></p>
-				<p class="main__text">
-          по истечении которого тест прекращается и Ваш ответ не будет сохранен
-        </p>
+    <main
+      style="
+        display: flex;
+        flex-direction: column;
+				justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 18px;
+      "
+    >
+      <div
+        class="main__title"
+        style="font-size: 18px; padding-block-start: 30px"
+      >
+        <div class="first__discription">
+          <div class="title">Уважаемый участник!</div>
+          <p>На выполнение этого задания отводится 20 минут</p>
+          <p class="main__text" >
+            по истечении которого тест прекращается и Ваш ответ не будет
+            сохранен
+          </p>
+        </div>
 
         <h1 class="title">
-				<div id="countdown-timer" style="position: relative;">
-					<h2>15</h2>
-					<p>минут</p>
-				</div>
-			</h1>
-        
-<div class="white-line" style="position: absolute;
-width: 100%;
-height: 17rem;
-background-color: #fff;
-top: 20%;
-left: 0;"></div>
-
-
+          <div id="countdown-timer">
+            <h2>20</h2>
+            <p>минут</p>
+          </div>
+        </h1>
       </div>
-			<script>
-let startTime = Date.now();
-let duration = 20000;
 
-function updateCountdown() {
-	let now = Date.now();
-	let difference = now - startTime;
+      <script>
+        let startTime = Date.now();
+        let duration = 1200000;
 
-	if (difference < duration) {
-		let minutes = Math.floor(difference / 1000 / 60);
-		let seconds = Math.floor((difference / 1000) % 60);
+        function updateCountdown() {
+          let now = Date.now();
+          let difference = now - startTime;
 
-		document.getElementById("countdown-timer").innerHTML = minutes + " мин " + seconds + " сек ";
-		setTimeout(updateCountdown, 1000);
-	} else{
-alert("Время истекло!");
-document.getElementById("yandex__form").style.display = 'none';
-	}
-}
+          if (difference < duration) {
+            let minutes = Math.floor(difference / 1000 / 60);
+            let seconds = Math.floor((difference / 1000) % 60);
 
-updateCountdown();
+            document.getElementById('countdown-timer').innerHTML =
+              minutes + ' мин ' + seconds + ' сек ';
+            setTimeout(updateCountdown, 1000);
+          } else {
+            alert('Время истекло!');
+            document.getElementById('iframeName').style.display = 'none';
+          }
+        }
 
-			</script>
+        updateCountdown();
+      </script>
+
       <!-- <script src="/src/timer.js"></script> -->
       <!-- <script src="https://yastatic.net/s3/frontend/forms/_/embed.js"></script> -->
       <!-- <iframe id="yandex__form"
@@ -75,8 +86,19 @@ updateCountdown();
         name="ya-form-653d2d35f47e73861cb1bc86"
         width="650"
       ></iframe> -->
-    
-			<iframe style="display: flex; flex-direction: column; width: 100%;" id="yandex__form" src="https://docs.google.com/forms/d/e/1FAIpQLSfJ0nvKRuCz9_mTsgfvEPxB4tuxB5Zejed71IsBZCM9wZK_vg/viewform?embedded=true" width="800" height="12635" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
-			</main>
+
+      <iframe
+        id="iframeName"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfJ0nvKRuCz9_mTsgfvEPxB4tuxB5Zejed71IsBZCM9wZK_vg/viewform?embedded=true"
+        width="640"
+        height="12635"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        allowfullscreen
+        scrolling="no"
+        >Загрузка…</iframe
+      >
+    </main>
   </body>
 </html>
